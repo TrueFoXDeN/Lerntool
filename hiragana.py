@@ -2,15 +2,12 @@ import random
 
 
 def random_hiragana(difficulty):
-    easy = ["あ", "い", "う", "え", "お"]
-
-    all = [("あ", "a"), ("か", "ka"), ("さ", "sa"), ("た", "ta"), ("な", "na"), ("は", "ha"), ("ま", "ma"), ("や", "ya"),
-           ("ら", "ra"), ("わ", "wa"), ("い", "i"), ("き", "ki"), ("し", "shi"), ("ち", "chi"), ("に", "ni"), ("ひ", "hi"),
-           ("み", "mi"), ("り", "ri"), ("う", "u"), ("く", "ku"), ("す", "su"), ("つ", "tsu"), ("ぬ", "nu"), ("ふ", "fu"),
-           ("む", "mu"), ("ゆ", "yu"), ("る", "ru"), ("え", "e"), ("け", "ke"), ("せ", "se"), ("て", "te"), ("ね", "ne"),
-           ("へ", "he"), ("め", "me"), ("れ", "re"), ("お", "o"), ("こ", "ko"), ("そ", "so"), ("と", "to"), ("の", "no"),
-           ("ほ", "ho"), ("も", "mo"), ("よ", "yo"), ("ろ", "ro"), ("を", "wo"), ("ん", "n")
-           ]
+    basic = [("あ", "a"), ("か", "ka"), ("さ", "sa"), ("た", "ta"), ("な", "na"), ("は", "ha"), ("ま", "ma"), ("や", "ya"),
+             ("ら", "ra"), ("わ", "wa"), ("い", "i"), ("き", "ki"), ("し", "shi"), ("ち", "chi"), ("に", "ni"), ("ひ", "hi"),
+             ("み", "mi"), ("り", "ri"), ("う", "u"), ("く", "ku"), ("す", "su"), ("つ", "tsu"), ("ぬ", "nu"), ("ふ", "fu"),
+             ("む", "mu"), ("ゆ", "yu"), ("る", "ru"), ("え", "e"), ("け", "ke"), ("せ", "se"), ("て", "te"), ("ね", "ne"),
+             ("へ", "he"), ("め", "me"), ("れ", "re"), ("お", "o"), ("こ", "ko"), ("そ", "so"), ("と", "to"), ("の", "no"),
+             ("ほ", "ho"), ("も", "mo"), ("よ", "yo"), ("ろ", "ro"), ("を", "wo"), ("ん", "n")]
 
     dakoun = [("が", "ga"), ("ざ", "za"), ("だ", "da"), ("ば", "ba"), ("ぱ", "pa"), ("ぎ", "gi"), ("じ", "ji"), ("ぢ", "ji"),
               ("び", "bi"), ("ぴ", "pi"), ("ぐ", "gu"), ("ず", "zu"), ("づ", "zu"), ("ぶ", "bu"), ("ぷ", "pu"), ("げ", "ge"),
@@ -23,10 +20,8 @@ def random_hiragana(difficulty):
              ("りゅ", "ryu"), ("きょ", "kyo"), ("ぎょ", "gyo"), ("しょ", "sho"), ("じょ", "jo"), ("ちょ", "cho"), ("にょ", "nyo"),
              ("ひょ", "hyo"), ("びょ", "byo"), ("ぴょ", "pyo"), ("みょ", "myo"), ("りょ", "ryo")]
 
-    if difficulty == "easy":
-        return random.choice(easy)
-    elif difficulty == "all":
-        return random.choice(all)
+    if difficulty == "basic":
+        return random.choice(basic)
     elif difficulty == "dakoun":
         return random.choice(dakoun)
     elif difficulty == "combo":
@@ -35,11 +30,11 @@ def random_hiragana(difficulty):
 
 def hiragana_loop(mode):
     while True:
-        print("easy, medium, all, dakoun, combo:")
+        print("basic, dakoun, combo:")
         difficulty = input()
         if difficulty == 'c':
             break
-        if difficulty not in ["easy", "medium", "all", "dakoun", "combo"]:
+        if difficulty not in ["basic", "dakoun", "combo"]:
             print("mode not supported :(")
             continue
 
